@@ -81,7 +81,8 @@ function search($keyword)
     $query = "SELECT * FROM products 
                 WHERE 
                 name LIKE '%$keyword%' OR
-                price LIKE '%$keyword%'
+                price LIKE '%$keyword%' OR
+                category LIKE '%$keyword%'
             ";
     return query($query);
 
@@ -149,7 +150,7 @@ function register($data)
     $konfirmasiPassword = mysqli_real_escape_string($conn, $data['konfirmasiPassword']);
 
     // mengecek apakah ada username yang sama
-    $result = mysqli_query($conn, "SELECT * FROM admin WHERE email = '$email'");
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'");
     if (mysqli_num_rows($result) == 1) {
         echo "<script>
             alert('Email telah tersedia');
@@ -170,7 +171,9 @@ function register($data)
     // enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_query($conn, "INSERT INTO admin ( ) VALUE ('', '$username', '$email' , '$password')");
+    // mysqli_query($conn, "INSERT INTO admin ( ) VALUE ('', '$username', '$email' , '$password')");
+    mysqli_query($conn, "INSERT INTO user (id, username, email, password) VALUES (NULL, '$username', '$email', '$password')");
+
 
     return mysqli_affected_rows($conn);
 }

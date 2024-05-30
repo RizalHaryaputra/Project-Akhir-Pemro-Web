@@ -171,7 +171,9 @@ function register($data)
     // enkripsi password
     $password = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_query($conn, "INSERT INTO admin ( ) VALUE ('', '$username', '$email' , '$password')");
+    // mysqli_query($conn, "INSERT INTO admin ( ) VALUE ('', '$username', '$email' , '$password')");
+    mysqli_query($conn, "INSERT INTO admin (id, username, email, password) VALUES (NULL, '$username', '$email', '$password')");
+
 
     return mysqli_affected_rows($conn);
 }
