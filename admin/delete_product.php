@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-require 'functions.php';
+require '../includes/functions.php';
 
 $id = $_GET['id'];
 

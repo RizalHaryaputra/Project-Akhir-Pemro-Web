@@ -1,6 +1,6 @@
 <?php
 // menghubungkan ke 
-require 'functions.php';
+require '../includes/functions.php';
 
 $keyword = $_GET['keyword'];
 

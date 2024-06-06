@@ -1,4 +1,4 @@
-const container = document.getElementById('container-table');
+const container = document.getElementById('container-produk');
 const keyword = document.getElementById('keyword-search');
 
 keyword.addEventListener('keyup', async function () {

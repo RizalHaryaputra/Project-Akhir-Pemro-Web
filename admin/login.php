@@ -3,7 +3,7 @@
 session_start();
 
 // menghubungkan dengan file lain
-require 'functions.php';
+require '../includes/functions.php';
 
 // mengecek apakah masih ada cookie
 if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
@@ -78,7 +78,7 @@ if (isset($_POST["masuk"])) {
 </head>
 
 <body>
-    <div class="container mt-3">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card" style="box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border-radius: 5px;">
